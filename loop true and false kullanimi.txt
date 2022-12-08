@@ -1,0 +1,39 @@
+ var owl = $(".owl-carousel");
+            owl.each(function(i)
+            {
+
+            var ifMultiple=false;
+            var $thisGallery = $(this);
+            if ($thisGallery.children('.item').length >4)
+            {
+                ifMultiple=true;
+            }
+            $thisGallery.owlCarousel({
+                loop:ifMultiple,
+                nav:true,
+                margin: 10,
+                navText: [
+                       "<div class='nav-button owl-next'><i class='fa fa-chevron-left' style='color:black;position:absolute;left:0px;top:16px;'></i></div>",
+                       "<div class='nav-button owl-prev'><i class='fa fa-chevron-right' style='color:black;position:absolute;right:-0px;top:16px;'></i></div>"
+                   ],
+                responsive: {
+                        0: {
+                            items: 2,
+                            loop:true
+                        },
+                        600: {
+                            items: 3,
+                            loop:true
+                        },
+                        960: {
+                            items: 4,
+                            loop:true
+                        },
+                        1200: {
+
+                            items: 5,
+
+                        }
+                    },
+            });
+             });
